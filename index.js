@@ -38,7 +38,7 @@ app.post("/", async (req, res) => {
     }
     return successResponse(
       res,
-      `${process.env.url}:${process.env.PORT}/${uniqueID}`
+      `${process.env.url}:${process.env.PORT}${uniqueID}`
     );
   } catch (error) {
     return errorResponse(res, error.message || "Server error");
