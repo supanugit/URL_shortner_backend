@@ -24,7 +24,7 @@ app.post("/", async (req, res) => {
     if (have) {
       return successResponse(
         res,
-        `${process.env.URL}/${have.uniqueID}`,
+        `${process.env.URL}${have.uniqueID}`,
         "You already got the shortURL"
       );
     }
@@ -38,7 +38,7 @@ app.post("/", async (req, res) => {
     }
     return successResponse(
       res,
-      `${process.env.url}:${process.env.PORT}${uniqueID}`
+      `${process.env.url}${uniqueID}`
     );
   } catch (error) {
     return errorResponse(res, error.message || "Server error");
